@@ -1,0 +1,105 @@
+@font-face {
+    src: url("rajdhani-regular.ttf");
+    font-family: "rajdhani"; /* dancing queen */
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "rajdhani";
+    /* background-color: #666666; */
+    text-align: center;
+    font-size: 16px;
+}
+
+body {
+    background-color: #666666;
+    display: flex;
+    justify-content: center;
+    /* width: 60%;*/
+}
+
+#wrapper {
+    width: 70%;
+    background-color: tomato;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+
+#header {
+    width: 100%;
+    /* border-bottom: 2px solid black; */
+    margin-bottom: 10px;
+}
+
+#site-title {
+    color: black;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#navbar ul{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    /* background-color: chartreuse; */
+}
+
+#navbar ul li {
+    display: inline-block;
+    font-size: 24px; 
+    /* background-color: blue; */
+    margin: 10px;
+    text-decoration: none;
+}
+
+#navbar hr {
+    width: 100%;
+    text-align: center;
+    border: 0px;
+    margin: auto;
+    background-color: black;
+    height: 16px;
+}
+
+h3 {
+    font-size: 3em;
+}
+
+h4 { 
+    font-size: 2em;
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+
+}
+
+#footer ul li {
+    display: inline-block;
+    margin-right: 10px;
+    width: 32px;
+}
+
+#footer ul li:last-child {
+    margin-right: 0px;
+}

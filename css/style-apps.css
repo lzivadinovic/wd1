@@ -29,7 +29,7 @@
 #content ul li a:after
 {
     content: attr(alt);
-    font-size: 20px;
+    font-size: 1.6rem;
 }
 
 #content ul li img {

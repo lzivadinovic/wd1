@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Startpage</title>
+        <meta charset="utf-8"/>
+        <meta title="Lazar Zivadinovic 42/19" name="author"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />  
+        <link rel="stylesheet" type="text/css" href="../css/style-articles.css" />  
+        <link rel="stylesheet" type="text/css" href="../css/media-queries.css" />  
+        <link rel="shortcut icon" href="favicon.ico"/>
+        <!-- Koristim mathjax na mom blogu lzivadinovic.com  -->
+        <script type="text/javascript" src="../assets/js/mathjax.js"></script>
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <header id="header">
+                <div id="site-title">
+                    <a href="./index.html">
+                        <h1>Reverse-engineer? </h1> 
+                        <h4>I can barely forward-engineer!</h4>
+                    </a>
+                </div>
+                <nav id="navbar">
+                    <ul>
+                        <li><a href="https://github.com/lzivadinovic">
+                            <h2>Github</h2></a>
+                        </li>
+                        <li><a href="../blog.html">
+                            <h2>Blog</h2></a>
+                        </li>
+                        <li><a href="../startpage.html">
+                            <h2>Startpage</h2></a>
+                        </li>
+                        <li><a href="../about.html">
+                            <h2>About Me</h2></a>
+                        </li>
+                    </ul>
+                    <hr>
+                </nav>
+            </header>
+
+            <section id="content">
+                <p>Pre nego što krenem da postujem informacije o progresu, želim da izjavim da je ovo vežba najgora vežba koju smo imali na ovom predmetu. Zanimljiva problematika svakako, ali neizvodljiva vežba sa stanovišta preciznosti i smislenosti postupka sa ovako malim brojem merenja.</p>
+                <br/>
+                <p>Sledeća stvar koja mi smeta je to što ako ljudi koji prave ove vežbe već znaju za probleme koji se javljaju zašto ne  isprave vežbu jednostavno ili da je naprave tako da bude izvodljiva (kao što se u tekstu same pripreme pominje "Potrebno je više merenja.."). Problem je u tome da je cilj izvršiti zadatak baš kako je napisano tj. po uputstvu umesto da cilj bude izvršiti zadatak tačno. Tu je problem to što će fakultet ispljunuti gomilu nekreativnih i neambicioznih studenata koji samo znaju da prate uputstva i neće biti spremni na istraživački rad. Što ih u principu odmah posle završetka osnovnih studija i čeka (master je "proba" istraživačkog rada).</p>
+                <br/>
+
+                <!-- Preuzeto sa https://www.sylvaindurand.org/overlay-image-in-pure-css/#_  -->
+
+                <a href="#img-id">
+                    <img src="../images/spektro_zvezda/actuary-actuarius-evolution.jpg" alt="Thumbnail">
+                </a>
+
+                <a href="#_" class="overlay" id="img-id">
+                  <img src="../images/spektro_zvezda/actuary-actuarius-evolution.jpg" alt="Fullscreen">
+                </a>
+
+                <br/>
+
+                <p>Ova vežba nije izvodljiva u okviru egzaktnih merenja, već se svodi na nagađanje. Meni stvarno nije jasno kako da integralim krivu čiji analitički oblik ne znam (u principu znam, ali ne znam parametre) (čak ni ne mogu da je skiciram zato što se ne bavim time pa da kažem "ja bih proterao autobus ovuda" ali to se svodi na frekventistički pristup). Sledeća stvar koja se pominje je "kada imamo krivu (hehe, LOL) možemo da integralimo PLANIMETROM". <a href="../images/spektro_zvezda/Patrick-Star-Smashing-A-Computer-On-Spongebob-Squarepants.gif">Ljudi, nije ovo 19. vek, imamo računare.</a> Ali to nije problem sa ovom vežbom. Glavni problem je taj da mi imamo generativni model  ali ga ignorišemo i stvaramo nova merenja (interpolacijom), koja u principu ne postoje. Ne bih se bunio da imamo više merenja i da onda radimo sa ovim stvarima, ali i dalje bih osećao nelagodnost.</p>
+                <br/>
+                <p><a href="../images/spektro_zvezda/1008.4686.pdf">Elem, Hogg i ekipa (Bovy i Lang) su jako ozbiljno shvatili ovakav problem i napisali ozbiljnu stvar o tome.</a> U principu, pišu o tome kako se generativni model koristi za fit i da je rezultat toga DISTRIBUCIJA VEROVATNOĆE MODELA/parametara u tom modelu. Jer ako dobijemo "tačno rešenje" običnim MNK i uzmemo 1 sigma grešku mi ne govorimo o distribuciji već samo o jednom specifičnom rešenju što nam daje manje informacija o samom problemu.</p>
+                <br/>
+                <p>"Above all we emphasize the importance of having a "generative model" for the data, even an approximate one. Once there is generative model, the subsequent fitting is non arbitrary because the model permits direct computation of likelihood of the parameters or the posteriore probability distribution."</p>
+                <br/>
+                <p>"When fitting is used for data-driven prediction -- that is, using existing data to predict the properties of new data not yet acquired -- the conditions for model applicability are weaker. For example, a line fit by the standard method outlined in Section 1 can be, under a range of assumptions, the best linear prediction of new data, even when it is not a good or appropriate model."</p>
+                <br/>
+                <p>Zato mi nije prijatno da interpoliram na prazno ovu krivu. Da bih pokazao koliko je loše interpolirati ovakve podatke, to sam i uradio, koristeći cubic spline kao "najprirodniji metod". (Videti grafik)</p>
+                <br/>
+                <p>Nekako sam uspeo da se iskobeljam i da nadjem IDL proceduru koja fituje krivu radijalnih brzina na moje podatke pa onda integralim tu krivu da bih dobio parametre sistema nazad (hoću da pokažem kako od krive radijalnih brzina mogu da dobijem parametre sistema (što u principu znači da ako imam puno merenja mogu da koristim metod pomenut u uputstvu vežbe)) . Procedura se zove <a class="reference external" href="http://www.cefca.es/people/%7Eriglesias/rvfit.html">vrfit</a>.</p>
+                <br/>
+                <p>Ova metoda se zasniva na gore pomenutom Bajesovskom pristupu, Tj. daje verovatnoću za svaki parametar i što je bitnije distribucije te verovatnoće. Ovo su fitovane i zaokružene vrednosti. Raspodele su date na slici ispod. Ove neodredjenosti su majorirane 1 sigma devijacije gausijana.</p>
+                <br/>
+
+
+                <a href="#img-id1">
+                    <img src="../images/spektro_zvezda/distribucije_parametara_v4.png" alt="Thumbnail">
+                </a>
+
+                <a href="#_" class="overlay" id="img-id1">
+                  <img src="../images/spektro_zvezda/distribucije_parametara_v4.png" alt="Fullscreen">
+                </a>
+
+                <br/>
+
+                <a href="#img-id2">
+                    <img src="../images/spektro_zvezda/vrednosti.png" alt="Thumbnail">
+                </a>
+
+                <a href="#_" class="overlay" id="img-id2">
+                  <img src="../images/spektro_zvezda/vrednosti.png" alt="Fullscreen">
+                </a>
+
+
+                <br/>
+                
+                <p>Sledeća stvar koju sam uradio je da sam na osnovu ovih parametara plotovao krivu radijalnih brzina za obe zvezde. Pritom rešavajući Keplerovu jednačinu pa korišćenjem te anomalije za izračunavanje <span class="math">\(\nu\)</span></p>
+                <br/>
+                <p>Elem, kada sam to uradio, dobio sam "normalnu" krivu koja savršeno prolazi kroz moje podatke i zapravo ima smisla. Zatim sam koristio tu krivu da dobijem parametre koristeći metodu Lehmann-Filhesa. Integralio osenčene povrsine (videti sliku, simpsonovim pravilom) i predstavio ih sa z11, z12, z21 i z22 (videti uputstvo vežbe) (pritom pazeći na znak, u smislu da negativne površine imaju negativni znak) i naravno, kao sto je prikazano u vežbi sveo "pocetak površine" na <span class="math">\(\gamma\)</span>.</p>
+                <br/>
+                <p>Ok, sivo i zuto su integraljene povrsine, sive su za prvu zvezdu, zute za drugu.</p>
+                <br/>
+
+                <a href="#img-id3">
+                    <img src="../images/spektro_zvezda/im_proving_shit.png" alt="Thumbnail">
+                </a>
+
+                <a href="#_" class="overlay" id="img-id3">
+                  <img src="../images/spektro_zvezda/im_proving_shit.png" alt="Fullscreen">
+                </a>
+                
+            </section>
+
+            <section id="footer">
+                    <ul>
+                        <li><a href="mailto:nesto"><img src="../images/footer/email.svg" alt="asd"></a></li>
+                        <li><a href="dsa"><img src="../images/footer/sitemap.svg" alt="ds"></a></li>
+                        <li><a href="dsa"><img src="../images/footer/rss.svg" alt="s"> </a></li>
+                    </ul>
+            </section>
+        </div>
+    </body>
+
+</html>

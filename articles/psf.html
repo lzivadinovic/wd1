@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Startpage</title>
+        <meta charset="utf-8"/>
+        <meta title="Lazar Zivadinovic 42/19" name="author"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />  
+        <link rel="stylesheet" type="text/css" href="../css/style-articles.css" />  
+        <link rel="stylesheet" type="text/css" href="../css/media-queries.css" />  
+        <link rel="shortcut icon" href="favicon.ico"/>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header id="header">
+                <div id="site-title">
+                    <a href="./index.html">
+                        <h1>Reverse-engineer? </h1> 
+                        <h4>I can barely forward-engineer!</h4>
+                    </a>
+                </div>
+                <nav id="navbar">
+                    <ul>
+                        <li><a href="https://github.com/lzivadinovic">
+                            <h2>Github</h2></a>
+                        </li>
+                        <li><a href="../blog.html">
+                            <h2>Blog</h2></a>
+                        </li>
+                        <li><a href="../startpage.html">
+                            <h2>Startpage</h2></a>
+                        </li>
+                        <li><a href="../about.html">
+                            <h2>About Me</h2></a>
+                        </li>
+                    </ul>
+                    <hr>
+                </nav>
+            </header>
+
+            <section id="content">
+                <p>PSF (point spread function) nam govori o nepravilnostima u optičkom sistemu. Optički savršen sistem ima neki difrakcioni limit i strukture koje su manje od toga ne može da razluči. Naravno, ni jedan sistem nije optički savršen tako da dolazi do raznih aberacija unutar samog sistema koje utiču na kvalitet slike. PSF nam govori o tim aberacijama. U principu, nemoguće je odrediti PSF teleskopa ali je moguće "nagađati" tu funkciju i zatim redukovati snimke metodom dekonvolucije.</p>
+                <a href="../images/psf/deconvolve.jpg" target="new"><img alt="deconvolve" src="../images/psf/deconvolve.jpg"/></a>
+                <p>PSF HINODE teleskopa je određena u <a href="https://www.aanda.org/articles/aa/pdf/2009/27/aa11975-09.pdf">ovom radu</a> tako što su posmatrali tranzit Merkura. Predpostavili su da ako bi tranzit bio posmatran optički savršenim teleskopom, intenzitet piksela na površini Merkura bi bio zanemarljivo mali u odnosu na intenzitet piksela na kojima je Sunčeva površina. Na osnovu te predpostavke napravili su funkciju koja se sastoji iz 4 gausijana i testirali su je tako da se metodom dekonvolucije dobije nešto najpriblišnije predpostavci.</p>
+                <p>Prva funkcija stvara PSF (2d matricu intenziteta).</p>
+                <p>Dok druga funkcija/procedura(zapravo) radi dekonvoluciju metodom max_likelihood ili max_entropy (iz nekog razloga ne radi) i za input parametre traži put do slike koju želimo da "sredimo", broj iteracija (za max_likelihood (~30), u kom filteru je slika i tip dekonvolucije.</p>
+                <p>Preporucujem da se procita docstring zato sto ima calling example i sve je lepo komentarisano. Mrzi me da pišem zato što je sve u fajlu.</p>
+                <p>Fajl možete skinuti <a class="reference external" href="../images/psf/psf.pro">ovde</a>.</p>
+                <p>Rezultat: RMS (Root Mean Square) sa 0.0799 na 0.0971 za blue continum</p>
+                <p>Još uvek nisam uradio za ostale filtere (račun za RMS) ali smatram da je najmanja "dobit" za blue continuum snimke zato što su najoštriji. Najveće poboljšanje se očekuje kod red continuum snimaka zato što imaju najširi PSF.</p>
+            </section>
+
+            <section id="footer">
+                    <ul>
+                        <li><a href="mailto:nesto"><img src="../images/footer/email.svg" alt="asd"></a></li>
+                        <li><a href="dsa"><img src="../images/footer/sitemap.svg" alt="ds"></a></li>
+                        <li><a href="dsa"><img src="../images/footer/rss.svg" alt="s"> </a></li>
+                    </ul>
+            </section>
+        </div>
+    </body>
+
+
+</html>

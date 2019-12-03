@@ -1,0 +1,35 @@
+#content {
+    margin: auto;
+    width 80%;
+    justify-content: left;
+    /* background-color: teal; */
+}
+
+#content ul {
+    display: flex;
+    flex-direction: column;
+    /* background-color: tomato; */
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+#content ul li {
+    display: flexbox;
+    /* background-color: whitesmoke; */
+    /* height: 1rem; */    
+    margin: 10px;
+    /* margin: auto; */
+    /* font-size: 10rem; */
+    text-align: left;
+}
+
+#content p {
+    /* justify-content: center; */
+    /* background-color: cornflowerblue; */
+    width: 50%;
+    text-align: justify;
+    margin: auto;
+}
+

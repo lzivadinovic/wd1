@@ -6,7 +6,7 @@
         <meta title="Lazar Zivadinovic 42/19" name="author"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/style.css" />  
-        <link rel="stylesheet" type="text/css" href="css/style-index.css" />  
+        <link rel="stylesheet" type="text/css" href="css/style-blog.css" />  
         <link rel="stylesheet" type="text/css" href="css/media-queries.css" />  
         <link rel="shortcut icon" href="favicon.ico"/>
     </head>
@@ -39,9 +39,18 @@
             </header>
 
             <section id="content">
-                    <img src="images/tux.svg" alt="Tux" />
-                    <h3>Lazar Zivadinovic</h3>
-                    <h4>$ cat /dev/urandom &gt; /dev/fb0</h4>
+                <ul>
+                    <li><a href="./articles/psf.html">
+                        <h3>Korekcija usled point spread funkcije teleskopa</h3>
+                        </a>
+                        <p>PSF (point spread function) nam govori o nepravilnostima u optičkom sistemu. Optički savršen sistem ima neki difrakcioni limit i strukture koje su manje od toga ne može da razluči. Naravno, ni jedan sistem nije optički savršen tako da dolazi do raznih aberacija unutar samog sistema koje utiču na kvalitet slike. PSF nam govori o tim aberacijama. U principu, nemoguće je odrediti PSF teleskopa ali je moguće "nagađati" tu funkciju i zatim redukovati snimke metodom dekonvolucije.</p>
+                    </li>
+                    <li><a href="./articles/spektro.html">
+                        <h3>Clanak o spektroskopski dvojnim zvezdama</h3>
+                        </a>
+                        <p>Pre nego što krenem da postujem informacije o progresu, želim da izjavim da je ovo vežba najgora vežba koju smo imali na ovom predmetu. Zanimljiva problematika svakako, ali neizvodljiva vežba sa stanovišta preciznosti i smislenosti postupka sa ovako malim brojem merenja.</p>
+                    </li>
+                </ul>
             </section>
 
             <section id="footer">
@@ -53,7 +62,7 @@
             </section>
         </div>
     </body>
+    
 
-    <!-- https://www.youtube.com/watch?v=KYabSlAy5ZY -->
 
 </html>

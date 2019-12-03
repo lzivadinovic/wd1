@@ -8,13 +8,25 @@
 #content p {
     font-size: 1.3rem;
     text-align: justify;
+    margin-bottom: 10px;
+}
+
+#content p:last-child {
+    margin-bottom: 0px;
+}
+
+#content a {
+    font-size: 1.3rem;
+    color: blue;
 }
 
 #content img {
     height: 500px;
 }
 
-/* Preuzeto sa https://www.sylvaindurand.org/overlay-image-in-pure-css/#_  */
+/* Preuzeto sa https://www.sylvaindurand.org/overlay-image-in-pure-css/#_  
+    Delovalo je zanimljivo, nisam znao kako ovo da napisem zapravo
+*/
 
 .overlay {
     position: fixed;

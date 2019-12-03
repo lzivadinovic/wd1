@@ -8,7 +8,7 @@
         <link rel="stylesheet" type="text/css" href="../css/style.css" />  
         <link rel="stylesheet" type="text/css" href="../css/style-articles.css" />  
         <link rel="stylesheet" type="text/css" href="../css/media-queries.css" />  
-        <link rel="shortcut icon" href="favicon.ico"/>
+        <link rel="shortcut icon" href="../favicon.ico"/>
     </head>
     <body>
         <div id="wrapper">
@@ -40,7 +40,16 @@
 
             <section id="content">
                 <p>PSF (point spread function) nam govori o nepravilnostima u optičkom sistemu. Optički savršen sistem ima neki difrakcioni limit i strukture koje su manje od toga ne može da razluči. Naravno, ni jedan sistem nije optički savršen tako da dolazi do raznih aberacija unutar samog sistema koje utiču na kvalitet slike. PSF nam govori o tim aberacijama. U principu, nemoguće je odrediti PSF teleskopa ali je moguće "nagađati" tu funkciju i zatim redukovati snimke metodom dekonvolucije.</p>
-                <a href="../images/psf/deconvolve.jpg" target="new"><img alt="deconvolve" src="../images/psf/deconvolve.jpg"/></a>
+                
+                <a href="#img-id">
+                    <img src="../images/psf/deconvolve.jpg" alt="Thumbnail">
+                </a>
+
+                <a href="#_" class="overlay" id="img-id">
+                  <img src="../images/psf/deconvolve.jpg" alt="Fullscreen">
+                </a>
+                <!-- <a href="../images/psf/deconvolve.jpg" target="new"><img alt="deconvolve" src="../images/psf/deconvolve.jpg"/></a> -->
+                
                 <p>PSF HINODE teleskopa je određena u <a href="https://www.aanda.org/articles/aa/pdf/2009/27/aa11975-09.pdf">ovom radu</a> tako što su posmatrali tranzit Merkura. Predpostavili su da ako bi tranzit bio posmatran optički savršenim teleskopom, intenzitet piksela na površini Merkura bi bio zanemarljivo mali u odnosu na intenzitet piksela na kojima je Sunčeva površina. Na osnovu te predpostavke napravili su funkciju koja se sastoji iz 4 gausijana i testirali su je tako da se metodom dekonvolucije dobije nešto najpriblišnije predpostavci.</p>
                 <p>Prva funkcija stvara PSF (2d matricu intenziteta).</p>
                 <p>Dok druga funkcija/procedura(zapravo) radi dekonvoluciju metodom max_likelihood ili max_entropy (iz nekog razloga ne radi) i za input parametre traži put do slike koju želimo da "sredimo", broj iteracija (za max_likelihood (~30), u kom filteru je slika i tip dekonvolucije.</p>

@@ -6,7 +6,7 @@
         <meta title="Lazar Zivadinovic 42/19" name="author"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../css/style.css" />  
-        <link rel="stylesheet" type="text/css" href="../css/style-articles.css" />  
+        <!-- <link rel="stylesheet" type="text/css" href="../css/style-articles.css" />   -->
         <link rel="stylesheet" type="text/css" href="../css/media-queries.css" />  
         <link rel="shortcut icon" href="../favicon.ico"/>
     </head>
@@ -14,7 +14,7 @@
         <div id="wrapper">
             <header id="header">
                 <div id="site-title">
-                    <a href="./index.html">
+                    <a href="../index.html">
                         <h1>Reverse-engineer? </h1> 
                         <h4>I can barely forward-engineer!</h4>
                     </a>
@@ -38,33 +38,32 @@
                 </nav>
             </header>
 
-            <section id="content">
+            <section id="article">
                 <p>PSF (point spread function) nam govori o nepravilnostima u optičkom sistemu. Optički savršen sistem ima neki difrakcioni limit i strukture koje su manje od toga ne može da razluči. Naravno, ni jedan sistem nije optički savršen tako da dolazi do raznih aberacija unutar samog sistema koje utiču na kvalitet slike. PSF nam govori o tim aberacijama. U principu, nemoguće je odrediti PSF teleskopa ali je moguće "nagađati" tu funkciju i zatim redukovati snimke metodom dekonvolucije.</p>
                 
                 <a href="#img-id">
-                    <img src="../images/psf/deconvolve.jpg" alt="Thumbnail">
+                    <img src="../images/psf/deconvolve.jpg" alt="Deconvolve">
                 </a>
 
                 <a href="#_" class="overlay" id="img-id">
-                  <img src="../images/psf/deconvolve.jpg" alt="Fullscreen">
+                  <img src="../images/psf/deconvolve.jpg" alt="Deconvolve-Fullscreen">
                 </a>
-                <!-- <a href="../images/psf/deconvolve.jpg" target="new"><img alt="deconvolve" src="../images/psf/deconvolve.jpg"/></a> -->
                 
-                <p>PSF HINODE teleskopa je određena u <a href="https://www.aanda.org/articles/aa/pdf/2009/27/aa11975-09.pdf">ovom radu</a> tako što su posmatrali tranzit Merkura. Predpostavili su da ako bi tranzit bio posmatran optički savršenim teleskopom, intenzitet piksela na površini Merkura bi bio zanemarljivo mali u odnosu na intenzitet piksela na kojima je Sunčeva površina. Na osnovu te predpostavke napravili su funkciju koja se sastoji iz 4 gausijana i testirali su je tako da se metodom dekonvolucije dobije nešto najpriblišnije predpostavci.</p>
+                <p>PSF HINODE teleskopa je određena u <a href="https://www.aanda.org/articles/aa/pdf/2009/27/aa11975-09.pdf" target="_blank">ovom radu</a> tako što su posmatrali tranzit Merkura. Predpostavili su da ako bi tranzit bio posmatran optički savršenim teleskopom, intenzitet piksela na površini Merkura bi bio zanemarljivo mali u odnosu na intenzitet piksela na kojima je Sunčeva površina. Na osnovu te predpostavke napravili su funkciju koja se sastoji iz 4 gausijana i testirali su je tako da se metodom dekonvolucije dobije nešto najpriblišnije predpostavci.</p>
                 <p>Prva funkcija stvara PSF (2d matricu intenziteta).</p>
                 <p>Dok druga funkcija/procedura(zapravo) radi dekonvoluciju metodom max_likelihood ili max_entropy (iz nekog razloga ne radi) i za input parametre traži put do slike koju želimo da "sredimo", broj iteracija (za max_likelihood (~30), u kom filteru je slika i tip dekonvolucije.</p>
                 <p>Preporucujem da se procita docstring zato sto ima calling example i sve je lepo komentarisano. Mrzi me da pišem zato što je sve u fajlu.</p>
-                <p>Fajl možete skinuti <a class="reference external" href="../images/psf/psf.pro">ovde</a>.</p>
+                <p>Fajl možete skinuti <a class="reference external" href="../images/psf/psf.pro" target="_blank">ovde</a>.</p>
                 <p>Rezultat: RMS (Root Mean Square) sa 0.0799 na 0.0971 za blue continum</p>
                 <p>Još uvek nisam uradio za ostale filtere (račun za RMS) ali smatram da je najmanja "dobit" za blue continuum snimke zato što su najoštriji. Najveće poboljšanje se očekuje kod red continuum snimaka zato što imaju najširi PSF.</p>
             </section>
 
             <section id="footer">
-                    <ul>
-                        <li><a href="mailto:mail@lzivadinovic.com"><img src="../images/footer/email.svg" alt="asd"></a></li>
-                        <li><a href="dsa"><img src="../images/footer/sitemap.svg" alt="ds"></a></li>
-                        <li><a href="dsa"><img src="../images/footer/rss.svg" alt="s"> </a></li>
-                    </ul>
+                <ul>
+                    <li><a href="mailto:mail@lzivadinovic.com"><img src="../images/footer/email.svg" alt="Email"></a></li>
+                    <li><a href="dsa"><img src="../images/footer/sitemap.svg" alt="Sitemap"></a></li>
+                    <li><a href="dsa"><img src="../images/footer/rss.svg" alt="RSS"> </a></li>
+                </ul>
             </section>
         </div>
     </body>

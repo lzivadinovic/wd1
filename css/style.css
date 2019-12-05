@@ -1,6 +1,6 @@
 @font-face {
     src: url("rajdhani-regular.ttf");
-    font-family: "rajdhani"; /* dancing queen */
+    font-family: "rajdhani";
 }
 
 * {
@@ -37,11 +37,11 @@ h2 {
 }
 
 h3 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
 }
 
 h4 { 
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 
 #wrapper {
@@ -102,3 +102,145 @@ h4 {
 #footer ul li:last-child {
     margin-right: 0px;
 }
+
+/* Stilizovanje za index */
+
+#index-pane img {
+    width: 15em;
+    height: auto;
+    padding: 1rem 0rem;
+}
+
+
+/* Stilizovanje za aplikacije */
+
+#apps {
+    margin: auto;
+    width: 70%;
+}
+
+#apps ul {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#apps ul li {
+    display: flexbox;
+    width: 8rem;
+    margin: 20px;   
+}
+
+
+#apps ul li a:after
+{
+    content: attr(alt);
+    font-size: 1.6rem;
+}
+
+#apps ul li img {
+    width: 8rem;
+    margin-bottom: 5px;
+    background: transparent;
+    border-radius: 20px;
+}
+
+
+/* Stilizovanje za blog  */
+
+#blog-posts {
+    margin: auto;
+    width: 100%;
+    /* justify-content: center;
+    background-color: darksalmon; */
+}
+
+#blog-posts ul {
+    display: flex;
+    flex-direction: column;
+}
+
+#blog-posts ul li {
+    display: flexbox;  
+    margin: 10px;
+    text-align: left;
+}
+
+#blog-posts p {
+
+    width: 100%;
+    text-align: justify;
+    margin: auto;
+}
+
+/* Stilizovanje za article  */
+
+#article {
+    width: 80%;
+    margin: auto;
+}
+
+#article p {
+    font-size: 1.3rem;
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+#article p:last-child {
+    margin-bottom: 0px;
+}
+
+#article a {
+    font-size: 1.3rem;
+    color: blue;
+}
+
+#article img {
+    height: 25rem;
+}
+
+/* Preuzeto sa https://www.sylvaindurand.org/overlay-image-in-pure-css/#_  
+    Delovalo je zanimljivo, nisam znao kako ovo da napisem zapravo
+    Nisam sredio da i ova stvar bude responsive
+    Mozda ako stignem do subote
+*/
+
+.overlay {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .3s;
+}
+  
+.overlay img{
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    margin: auto;
+    transform: scale(0.95);
+    transition: transform .3s;
+}
+  
+.overlay:target {
+    visibility: visible;
+    outline: none;
+    cursor: default;
+    opacity: 1;
+}
+  
+.overlay:target img {
+      transform: scale(1.5);
+}
+
+

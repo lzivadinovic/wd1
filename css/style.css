@@ -1,3 +1,5 @@
+/* Global css settings */
+
 @font-face {
     src: url("rajdhani-regular.ttf");
     font-family: "rajdhani";
@@ -7,8 +9,9 @@
     margin: 0px;
     padding: 0px;
     font-family: "rajdhani";
-    /* background-color: #666666; */
     text-align: center;
+    /* Main formater for tex, rem is scaled to this */
+    /* em is per box based scaling */
     font-size: 16px;
 }
 
@@ -16,10 +19,11 @@ body {
     background-color: silver;
     display: flex;
     justify-content: center;
-    /* width: 60%;*/
 }
 
 a {
+    /* All links to be blank and without decoration
+    Will override in articles */
     text-decoration: none;
     color: black;
 }
@@ -27,6 +31,8 @@ a {
 ul {
     list-style-type: none;
 }
+
+/* Relative font sizes */
 
 h1 {
     font-size: 3.5rem;
@@ -42,17 +48,14 @@ h3 {
 
 h4 { 
     font-size: 1.5rem;
-    /* background-color: red; */
 }
 
 #wrapper {
     width: 70%;
-    /* background-color: darkgreen; */
 }
 
 #header {
     width: 100%;
-    /* border-bottom: 2px solid black; */
     margin-bottom: 10px;
 }
 
@@ -67,7 +70,6 @@ h4 {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    /* background-color: chartreuse; */
 }
 
 #navbar hr {
@@ -81,8 +83,6 @@ h4 {
 
 #navbar ul li {
     display: inline-block;
-    /* font-size: 24px;  */
-    /* background-color: blue; */
     margin: 10px;
     margin-top: 0px;
     text-decoration: none;
@@ -104,24 +104,31 @@ h4 {
     margin-right: 0px;
 }
 
-/* Stilizovanje za index */
+/* Index style */
 
 #index-pane img {
-    width: 15em;
+    width: 15rem;
     height: auto;
     padding: 1rem 0rem;
 }
 
+/* We create simple black inline block */
 .blink {
     display: inline-block;
     position: relative;
     top: 3px;
     align-content: center;
+    /* We create animation called blink 
+    that repeats every second forever */
     animation: blink 1s step-end infinite;
+    /* We are using em here because we want to inherit
+    from h4. If somehow h4 changes, we want to catch this */
     width: 0.5em;
     height: 1.5em;
     background: black;
 }
+
+/* We define blink operation */
 
 @keyframes blink {
    0% {
@@ -135,8 +142,7 @@ h4 {
    }
 }
 
-
-/* Stilizovanje za aplikacije */
+/* Apps (startpage) style */
 
 #apps {
     margin: auto;
@@ -153,10 +159,11 @@ h4 {
 #apps ul li {
     display: flexbox;
     width: 8rem;
+    /* We want fixed spacing */
     margin: 20px;   
 }
 
-
+/* Add text from alt tag */
 #apps ul li a:after
 {
     content: attr(alt);
@@ -170,14 +177,11 @@ h4 {
     border-radius: 20px;
 }
 
-
-/* Stilizovanje za blog  */
+/* Blog style */
 
 #blog-posts {
     margin: auto;
     width: 100%;
-    /* justify-content: center;
-    background-color: darksalmon; */
 }
 
 #blog-posts ul {
@@ -192,13 +196,12 @@ h4 {
 }
 
 #blog-posts p {
-
     width: 100%;
     text-align: justify;
     margin: auto;
 }
 
-/* Stilizovanje za article  */
+/* Article style */
 
 #article {
     width: 80%;
@@ -226,8 +229,7 @@ h4 {
 
 /* Preuzeto sa https://www.sylvaindurand.org/overlay-image-in-pure-css/#_  
     Delovalo je zanimljivo, nisam znao kako ovo da napisem zapravo
-    Nisam sredio da i ova stvar bude responsive
-    Mozda ako stignem do subote
+    Nisam sredio da bude responsive
 */
 
 .overlay {
@@ -264,7 +266,5 @@ h4 {
 }
   
 .overlay:target img {
-      transform: scale(1.5);
+    transform: scale(1.5);
 }
-
-

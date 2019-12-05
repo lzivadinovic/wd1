@@ -1,8 +1,23 @@
-@media screen and (max-width:65em){
+/* Query for width size of screen */
+@media screen and (max-width:1000px){
+    /* Change navbar hr span */
     #navbar hr {
         width: 100%;
     }
+
+    /* Change flexbox direction for startmenu */
     #navbar ul {
         flex-direction: column;
     }
+
+    /* Dont overscale image
+    And make them actually visible on small screen */
+    #article img {
+        position: relative;
+        width: 100%;
+    }
+    .overlay:target img {
+        transform: scale(1);
+    }
+
 }

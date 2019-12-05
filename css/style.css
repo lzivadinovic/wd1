@@ -42,6 +42,7 @@ h3 {
 
 h4 { 
     font-size: 1.5rem;
+    /* background-color: red; */
 }
 
 #wrapper {
@@ -109,6 +110,29 @@ h4 {
     width: 15em;
     height: auto;
     padding: 1rem 0rem;
+}
+
+.blink {
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    align-content: center;
+    animation: blink 1s step-end infinite;
+    width: 0.5em;
+    height: 1.5em;
+    background: black;
+}
+
+@keyframes blink {
+   0% {
+     opacity: 0;
+   }
+   50% {
+     opacity: 1;
+   }
+   100% {
+     opacity: 0;
+   }
 }
 
 

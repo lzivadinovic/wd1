@@ -1,33 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://webdizajn-lazar.lzivadinovic.com/</loc>
-  </url>
-  <url>
-    <loc>https://webdizajn-lazar.lzivadinovic.com/index.html</loc>
+    <lastmod>2019-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1</priority>
   </url>
   <url>
     <loc>https://webdizajn-lazar.lzivadinovic.com/blog.html</loc>
+    <lastmod>2019-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://webdizajn-lazar.lzivadinovic.com/startpage.html</loc>
+    <lastmod>2019-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://webdizajn-lazar.lzivadinovic.com/about.html</loc>
-  </url>
-  <url>
-    <loc>https://webdizajn-lazar.lzivadinovic.com/rss.xml</loc>
+    <lastmod>2019-12-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
   </url>
   <url>
     <loc>https://webdizajn-lazar.lzivadinovic.com/articles/psf.html</loc>
+    <lastmod>2019-12-05</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://webdizajn-lazar.lzivadinovic.com/articles/spektro.html</loc>
-  </url>
-  <url>
-    <loc>https://webdizajn-lazar.lzivadinovic.com/images/psf/psf.pro</loc>
-  </url>
-  <url>
-    <loc>https://webdizajn-lazar.lzivadinovic.com/images/spektro_zvezda/1008.4686.pdf</loc>
+    <lastmod>2019-12-05</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

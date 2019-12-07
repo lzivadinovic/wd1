@@ -268,3 +268,11 @@ h4 {
 .overlay:target img {
     transform: scale(1.5);
 }
+
+#form-table {
+    margin: 10px auto;
+}
+
+#form-wrapper form th {
+    display: none;
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="sr-Latn-RS">
     <head>
         <title>Startpage</title>
         <meta charset="utf-8"/>
@@ -48,6 +48,31 @@
                 <p>U principu, pregoreo sam na astrofizici i treba mi malo da odmorim, ako se nekada predomislim, završiću astrofiziku. ICT sam upisao da bih imao diplomu sa kojom bih mogao da konkurišem kao IT staff na institutima za solarnu astrofiziku. Želim da pravim automatske procedure za obradu podataka sa teleskopa. Uskoro stiže DKIST i EST i voleo bih da radim na tim teleskopima.</p>
                 <p>Moj CV možete preuzeti <a href="./images/cv.pdf" target="_blank">ovde</a>.</p>
                 <p>P.S. Deploy procedura za ovaj sajt je bukvalno git pull u crontabu sa <a href="https://github.com/lzivadinovic/wd1" target="_blank">ovog repoa</a>.</p>
+            </section>
+
+            <section id="form-wrapper">
+                <form action="#" method="GET" name="forma" id="form">
+                    <table id="form-table">
+                        <tr>
+                            <th>Name:</th>
+                	        <td class="naziv">Name:</td>
+                	        <td>
+                	        <input type="text" class="text-box"  id="tbImePrezime" name="tbImePrezime"/>
+                	    </td>
+                	    </tr>
+                	    <tr>
+                            <th>Email:</th>
+                	        <td class="naziv">Email:</td>
+                	        <td><input type="email" class="text-box" id="tbEmail" name="tbEmail"/></td>
+                	    </tr>
+                	    <tr>
+                	        <td colspan="2" align="center">
+                	            <input type="submit" value="I'll call you" class="button" id="enter" name="enter"/>
+                		        <input type="reset" value="Reset" class="button" id="cancel" name="cancel"/>
+                	        </td>
+                	    </tr>
+                    </table>
+                </form>
             </section>
 
             <section id="footer">

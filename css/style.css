@@ -177,6 +177,8 @@ h4 {
     border-radius: 20px;
 }
 
+/* Should i li or should i img???  */
+
 #apps ul li:hover {
     transform: scale(1.2);
 }

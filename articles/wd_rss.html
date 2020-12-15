@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="sr-Latn-RS">
+    <head>
+        <title>Startpage</title>
+        <meta charset="utf-8"/>
+        <meta title="Lazar Zivadinovic 42/19" name="author"/>
+        <meta name="description" content="This is simple startpage i use at home" />
+        <link rel="canonical" href="http://webdizajn-lazar.lzivadinovic.com/" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />  
+		<meta name="keywords" content="startpage, personal blog, solar astrophysics">
+        <!-- <link rel="stylesheet" type="text/css" href="../css/style-articles.css" />   -->
+        <link rel="stylesheet" type="text/css" href="../css/media-queries.css" />  
+        <link rel="shortcut icon" href="../favicon.ico"/>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header id="header">
+                <div id="site-title">
+                    <a href="../index.html">
+                        <h1>Reverse-engineer? </h1> 
+                        <h4>I can barely forward-engineer!</h4>
+                    </a>
+                </div>
+                <nav id="navbar">
+                    <ul>
+                        <li><a href="https://github.com/lzivadinovic">
+                            <h2>Github</h2></a>
+                        </li>
+                        <li><a href="../blog.html">
+                            <h2>Blog</h2></a>
+                        </li>
+                        <li><a href="../startpage.html">
+                            <h2>Startpage</h2></a>
+                        </li>
+                        <li><a href="../about.html">
+                            <h2>About Me</h2></a>
+                        </li>
+                    </ul>
+                    <hr>
+                </nav>
+            </header>
+
+            <section id="article">
+                <p>RSS je super tehnologija. RSS agregatori koji su ugradjeni u browser su užasna implementacija odlične ideje. Zaključan rss feed samo nije kul.</p>
+                <p>Sajt za kurseve vezane za <a href="https://webdizajn.ict.edu.rs", target="_blank">webdizajn</a> ima RSS feed, ali da bi se pristupilo tom feed-u, korisnik mora da bude ulogovan preko svog google nalog.
+                Ovo, naravno, nije baš pogodno za agregatore jer su uglavnom vrlo ograniceni i podržavaju samo osnovnu http autentifikaciju.</p>
+                <p>Pošto aktivno koristim RSS, ovo me je izluđivalo tako da sam napisao cronjob koji dovlači preko curl komande rss feed svakih 5 minuta na moj webserver i onda odatle serviram mom agregatoru bez ikakve dodatne autentifikacije.</p>
+
+                <p>Takodje, iz nekog razloga, RSS koji servira sajt nije totalno validan, vec ima neki dodatni kod na kraju čiju ulogu mogu da predpostavim (moram da pogledam kako tačno radi protokol da bih mogao da tvrdim).</p>
+
+                <p>Ovo sam uspeo da uradim tako što sam se preko browsera ulogovao na google nalog, otisao na sajt webdizajn, video koji se sve http hederi šalju kada se okine poziv ka rss feed-u i spakovao u curl. Zatim sam koristeći head komandu izbacio poslednju liniju koja je html kod.</p>
+
+                <p>Komanda u mom cronjob-u je:</p>
+                <div class='code_syntax'>curl 'https://webdizajn.ict.edu.rs/rssfeed.xml' -H 'Cookie: has_js=1; OVDE_IDE_MOJ_GOOGLE_COOKIE' -H 'Pragma: no-cache' -H 'Cache-Control: no-cache' | head -n -1 > /putanja/na/mom/ws/rss.xml</div>
+                <p>Curl komanda će dovući feed, head -1 će izbaciti poslednju liniju, redirekcija će ispisati fajl na odgovarajućem mestu.</p>
+
+                    
+            </section>
+        </div>
+    </body>
+
+
+</html>

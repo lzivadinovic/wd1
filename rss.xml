@@ -3,7 +3,7 @@
   <channel>
     <title>Simple RSS feed za moj sajt</title>
     <description>Ovo je feed za moje blog članke. Sada je vrlo primitivan jer moram da kucam sve (nema generatora). Ne koristim zapravo ovaj sajt.</description>
-    <link>https://webdizajn-lazar.lzivadinovic.com/blog.html</link>
+    <link>https://wd.lzivadinovic.com/blog.html</link>
     <item>
       <title>Korekcija usled point spread funkcije teleskopa</title>
       <description>PSF (point spread function) nam govori o nepravilnostima 
@@ -14,14 +14,20 @@
       PSF nam govori o tim aberacijama. U principu, nemoguće je odrediti 
       PSF teleskopa ali je moguće "nagađati" tu funkciju i zatim redukovati 
       snimke metodom dekonvolucije.</description>
-      <link>https://webdizajn-lazar.lzivadinovic.com/articles/psf.html</link>
+      <link>https://wd.lzivadinovic.com/articles/psf.html</link>
       <pubDate>Wed, 15 Jun 2016 14:30:00 +0100</pubDate>
     </item>
     <item>
       <title>Članak o spektroskopski dvojnim zvezdama</title>
       <description>Pre nego što krenem da postujem informacije o progresu, želim da izjavim da je ovo vežba najgora vežba koju smo imali na ovom predmetu. Zanimljiva problematika svakako, ali neizvodljiva vežba sa stanovišta preciznosti i smislenosti postupka sa ovako malim brojem merenja.</description>
-      <link>https://webdizajn-lazar.lzivadinovic.com/articles/spektro.html</link>
+      <link>https://wd.lzivadinovic.com/articles/spektro.html</link>
       <pubDate>Sat, 14 May 2016 20:03:25 +0100</pubDate>
+    </item>
+    <item>
+      <title>RSS feed na sajtu webdizajn</title>
+      <description>RSS je super tehnologija. RSS agregatori koji su ugradjeni u browser su užasna implementacija odlične ideje.</description>
+      <link>https://wd.lzivadinovic.com/articles/wd_rss.html</link>
+      <pubDate>Sat, 20 Oct 2020 20:03:25 +0100</pubDate>
     </item>
   </channel>
 </rss>
